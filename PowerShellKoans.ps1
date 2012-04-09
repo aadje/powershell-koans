@@ -192,3 +192,15 @@ $PWD.tostring()
     - Change something in your registry #>
 Set-ItemProperty -path "HKLM:\Software\CompanyName\ApplicationName" -name "InstallLocation" -value "C:\Program Files\CompanyName"
 
+#=========================================================
+
+<#
+    - All Powershell hosts load profile .ps1 files at host startup 
+    - The location of the Profile is stored in $profile.
+    - You can create seperated $profiles for each Powershell Host / All Users / Current User.
+    - Reload the Profile by dot sourcing it, if you don't want to restart the host:  . $profile #>
+    
+notepad $profile
+. $profile
+psedit $profile.AllUsersAllHosts
+
